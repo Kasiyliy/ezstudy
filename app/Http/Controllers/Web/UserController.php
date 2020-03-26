@@ -40,7 +40,9 @@ class UserController extends WebBaseController
 
     public function store(StoreOrUpdateUserRequest $request)
     {
-        User::create($request->all());
+        $user = User::create($request->all());
+        $user->password = bcrypt($user->password);
+        $user->save();
         $this->added();
         return redirect()->back();
     }
