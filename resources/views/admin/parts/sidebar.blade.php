@@ -18,15 +18,18 @@
                 <span>Басқару тақтасы</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('users.index')}}">
-                <span>Қолданушылар</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('courses.index')}}">
-                <span>Курстар</span>
-            </a>
-        </li>
+
+        @if(Auth::user()->isAdmin())
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('users.index')}}">
+                    <span>Қолданушылар</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('courses.index')}}">
+                    <span>Курстар</span>
+                </a>
+            </li>
+        @endif
     </ul>
 </nav>

@@ -18,12 +18,12 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('login', ['as' => 'login.post', 'uses' => 'LoginController@login']);
     Route::post('logout', ['as' => 'logout', 'uses' => 'LoginController@logout']);
 
-    Route::get('password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'ResetPasswordController@showResetForm']);
-    Route::get('password/reset', ['as' => 'password.reset', 'uses' => 'ForgotPasswordController@showLinkRequestForm']);
-    Route::post('password/email', ['as' => 'password.email', 'uses' => 'ForgotPasswordController@sendResetLinkEmail']);
-    Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'ResetPasswordController@reset']);
-    Route::get('register', ['as' => 'register', 'uses' => 'RegisterController@showRegistrationForm']);
-    Route::post('register', ['as' => 'register.post', 'uses' => 'RegisterController@register']);
+//    Route::get('password/reset/{token}', ['as' => 'password.reset.token', 'uses' => 'ResetPasswordController@showResetForm']);
+//    Route::get('password/reset', ['as' => 'password.reset', 'uses' => 'ForgotPasswordController@showLinkRequestForm']);
+//    Route::post('password/email', ['as' => 'password.email', 'uses' => 'ForgotPasswordController@sendResetLinkEmail']);
+//    Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'ResetPasswordController@reset']);
+//    Route::get('register', ['as' => 'register', 'uses' => 'RegisterController@showRegistrationForm']);
+//    Route::post('register', ['as' => 'register.post', 'uses' => 'RegisterController@register']);
 
 
 });
@@ -78,7 +78,7 @@ Route::group(['namespace' => 'Web'], function () {
         });
 
         Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_USER]], function () {
-            
+
         });
     });
 });
