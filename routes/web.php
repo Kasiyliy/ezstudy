@@ -68,5 +68,7 @@ Route::group(['namespace' => 'Web'], function () {
         Route::post('/lessons/{course_id}/store', ['uses' => 'LessonController@store', 'as' => 'lessons.store'])->where('course_id', '[0-9]+');
         Route::post('/lessons/delete/{id}', ['uses' => 'LessonController@delete', 'as' => 'lessons.delete'])->where('course_id', '[0-9]+');
 
+        Route::post('/quizzes/{course_id}/store', ['uses' => 'QuizController@store', 'as' => 'quizzes.store'])->where('course_id', '[0-9]+');
+        Route::post('/quizzes/{id}/update', ['uses' => 'QuizController@update', 'as' => 'quizzes.update'])->where('id', '[0-9]+');
     });
 });

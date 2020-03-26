@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Core\Interfaces\WithUser;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class WebBaseController extends Controller implements WithUser
 {
@@ -82,11 +83,4 @@ class WebBaseController extends Controller implements WithUser
         return Auth::id();
     }
 
-    public function checkExistsOrRedirectBack($el)
-    {
-        if (!$el) {
-            $this->notFound();
-            return redirect()->back();
-        }
-    }
 }

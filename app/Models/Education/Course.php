@@ -15,6 +15,7 @@ class Course extends Model
         "name",
         "description",
         "image_path",
+        'quiz_id'
     ];
 
     public function lessons()
@@ -22,8 +23,8 @@ class Course extends Model
         return $this->hasMany(Lesson::class, 'course_id', 'id');
     }
 
-    public function quizzes()
+    public function quiz()
     {
-        return $this->hasMany(Quiz::class, 'quiz_id', 'id');
+        return $this->belongsTo(Quiz::class, 'quiz_id', 'id');
     }
 }

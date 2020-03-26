@@ -15,6 +15,28 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-12  mb-4">
+                <div class="card card-small">
+                    <div class="card-header border-bottom">
+                        <h6 class="m-0">
+                            @if($quiz->id)
+                                Тест аты: {{$quiz->name}}
+                            @else
+                                <span class="text-danger">Тест қосуды умытпаңыз!</span>
+                            @endif
+
+                        </h6>
+                    </div>
+                </div>
+                <form @if($quiz->id)
+                      action="{{route('quizzes.update', ['id' => $quiz->id])}}"
+                      @else
+                      action="{{route('quizzes.store', ['course_id' => $course->id])}}"
+                      @endif
+                      method="post">
+                    @include('admin.main.quizzes.form')
+                </form>
+            </div>
             @if($lessons->count() > 0)
                 @foreach($lessons as $lesson)
                     <div class="col-12">
@@ -31,7 +53,8 @@
                                     Жаңарту <i class="fa fa-edit"></i>
                                 </a>
 
-                                <form class="d-inline" action="{{route('lessons.delete', ['id' => $lesson->id])}}" method="post">
+                                <form class="d-inline" action="{{route('lessons.delete', ['id' => $lesson->id])}}"
+                                      method="post">
                                     {{csrf_field()}}
                                     <button type="submit" class="btn btn-outline-danger mb-2 "
                                             href="">

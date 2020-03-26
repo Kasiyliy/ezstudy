@@ -32,8 +32,7 @@ class UserController extends WebBaseController
 
     public function edit($id)
     {
-        $user = User::find($id);
-        $this->checkExistsOrRedirectBack($user);
+        $user = User::findOrFail($id);
         $roles = Role::all();
         return view('admin.main.users.edit', compact('user', 'roles'));
 
@@ -48,8 +47,7 @@ class UserController extends WebBaseController
 
     public function update($id, StoreOrUpdateUserRequest $request)
     {
-        $user = User::find($id);
-        $this->checkExistsOrRedirectBack($user);
+        $user = User::findOrFail($id);
         $user->fill($request->all());
         $user->save();
         $this->edited();

@@ -63,8 +63,7 @@ class CourseController extends WebBaseController
 
     public function update($id, StoreOrUpdateCourseRequest $request)
     {
-        $course = Course::find($id);
-        $this->checkExistsOrRedirectBack($course);
+        $course = Course::findOrFail($id);
         $course->fill($request->all());
         if ($request->file('image')) {
             $image_path = $this
@@ -81,8 +80,7 @@ class CourseController extends WebBaseController
 
     public function delete($id)
     {
-        $lesson = Course::find($id);
-        $this->checkExistsOrRedirectBack($lesson);
+        $lesson = Course::findOrFail($id);
         $lesson->delete();
         return redirect()->back();
     }
