@@ -10,7 +10,9 @@
                    placeholder="Аты" required>
         </div>
         <button type="submit" class="btn btn-success mr-2">Сақтау</button>
-        <button class="btn btn-light">Бас тарту</button>
+        @if($quiz->id)
+            <button class="btn btn-primary">Cұрақтар</button>
+        @endif
     </div>
     <div class="card-footer">
         @include('admin.parts.error')
