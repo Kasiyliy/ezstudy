@@ -48,29 +48,37 @@ Route::group(['namespace' => 'Web'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/home', ['uses' => 'HomeController@index', 'as' => 'home']);
 
-        Route::get('/users/list', ['uses' => 'UserController@index', 'as' => 'users.index']);
-        Route::get('/users/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'users.edit'])->where('id', '[0-9]+');
-        Route::post('/users/{id}/update', ['uses' => 'UserController@update', 'as' => 'users.update'])->where('id', '[0-9]+');
-        Route::get('/users/create', ['uses' => 'UserController@create', 'as' => 'users.create']);
-        Route::post('/users/store', ['uses' => 'UserController@store', 'as' => 'users.store']);
 
-        Route::get('/courses/list', ['uses' => 'CourseController@index', 'as' => 'courses.index']);
-        Route::get('/courses/{id}/edit', ['uses' => 'CourseController@edit', 'as' => 'courses.edit'])->where('id', '[0-9]+');
-        Route::post('/courses/{id}/update', ['uses' => 'CourseController@update', 'as' => 'courses.update'])->where('id', '[0-9]+');
-        Route::get('/courses/create', ['uses' => 'CourseController@create', 'as' => 'courses.create']);
-        Route::post('/courses/store', ['uses' => 'CourseController@store', 'as' => 'courses.store']);
-        Route::post('/courses/delete/{id}', ['uses' => 'CourseController@delete', 'as' => 'courses.delete'])->where('id', '[0-9]+');;
+        Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_ADMIN]], function () {
 
-        Route::get('/lessons/{course_id}/list', ['uses' => 'LessonController@index', 'as' => 'lessons.index'])->where('course_id', '[0-9]+');
-        Route::get('/lessons/{id}/edit', ['uses' => 'LessonController@edit', 'as' => 'lessons.edit'])->where('id', '[0-9]+');
-        Route::post('/lessons/{id}/update', ['uses' => 'LessonController@update', 'as' => 'lessons.update'])->where('id', '[0-9]+');
-        Route::get('/lessons/{course_id}/create', ['uses' => 'LessonController@create', 'as' => 'lessons.create'])->where('course_id', '[0-9]+');
-        Route::post('/lessons/{course_id}/store', ['uses' => 'LessonController@store', 'as' => 'lessons.store'])->where('course_id', '[0-9]+');
-        Route::post('/lessons/delete/{id}', ['uses' => 'LessonController@delete', 'as' => 'lessons.delete'])->where('course_id', '[0-9]+');
+            Route::get('/users/list', ['uses' => 'UserController@index', 'as' => 'users.index']);
+            Route::get('/users/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'users.edit'])->where('id', '[0-9]+');
+            Route::post('/users/{id}/update', ['uses' => 'UserController@update', 'as' => 'users.update'])->where('id', '[0-9]+');
+            Route::get('/users/create', ['uses' => 'UserController@create', 'as' => 'users.create']);
+            Route::post('/users/store', ['uses' => 'UserController@store', 'as' => 'users.store']);
 
-        Route::post('/quizzes/{course_id}/store', ['uses' => 'QuizController@store', 'as' => 'quizzes.store'])->where('course_id', '[0-9]+');
-        Route::post('/quizzes/{id}/update', ['uses' => 'QuizController@update', 'as' => 'quizzes.update'])->where('id', '[0-9]+');
+            Route::get('/courses/list', ['uses' => 'CourseController@index', 'as' => 'courses.index']);
+            Route::get('/courses/{id}/edit', ['uses' => 'CourseController@edit', 'as' => 'courses.edit'])->where('id', '[0-9]+');
+            Route::post('/courses/{id}/update', ['uses' => 'CourseController@update', 'as' => 'courses.update'])->where('id', '[0-9]+');
+            Route::get('/courses/create', ['uses' => 'CourseController@create', 'as' => 'courses.create']);
+            Route::post('/courses/store', ['uses' => 'CourseController@store', 'as' => 'courses.store']);
+            Route::post('/courses/delete/{id}', ['uses' => 'CourseController@delete', 'as' => 'courses.delete'])->where('id', '[0-9]+');;
 
-        Route::get('/questions/{id}/list', ['uses' => 'QuestionController@index', 'as' => 'questions.index'])->where('id', '[0-9]+');
+            Route::get('/lessons/{course_id}/list', ['uses' => 'LessonController@index', 'as' => 'lessons.index'])->where('course_id', '[0-9]+');
+            Route::get('/lessons/{id}/edit', ['uses' => 'LessonController@edit', 'as' => 'lessons.edit'])->where('id', '[0-9]+');
+            Route::post('/lessons/{id}/update', ['uses' => 'LessonController@update', 'as' => 'lessons.update'])->where('id', '[0-9]+');
+            Route::get('/lessons/{course_id}/create', ['uses' => 'LessonController@create', 'as' => 'lessons.create'])->where('course_id', '[0-9]+');
+            Route::post('/lessons/{course_id}/store', ['uses' => 'LessonController@store', 'as' => 'lessons.store'])->where('course_id', '[0-9]+');
+            Route::post('/lessons/delete/{id}', ['uses' => 'LessonController@delete', 'as' => 'lessons.delete'])->where('course_id', '[0-9]+');
+
+            Route::post('/quizzes/{course_id}/store', ['uses' => 'QuizController@store', 'as' => 'quizzes.store'])->where('course_id', '[0-9]+');
+            Route::post('/quizzes/{id}/update', ['uses' => 'QuizController@update', 'as' => 'quizzes.update'])->where('id', '[0-9]+');
+
+            Route::get('/questions/{id}/list', ['uses' => 'QuestionController@index', 'as' => 'questions.index'])->where('id', '[0-9]+');
+        });
+
+        Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_USER]], function () {
+
+        });
     });
 });
