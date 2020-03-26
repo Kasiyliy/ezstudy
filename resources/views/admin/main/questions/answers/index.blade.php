@@ -53,13 +53,13 @@
                                         {{--                                            Жаңарту <i class="fa fa-edit"></i>--}}
                                         {{--                                        </a>--}}
 
-                                        {{--                                        <form class="d-inline" action="{{route('questions.delete', ['id' => $question->id])}}" method="post">--}}
-                                        {{--                                            {{csrf_field()}}--}}
-                                        {{--                                            <button type="submit" class="btn btn-outline-danger mb-2 "--}}
-                                        {{--                                                    href="">--}}
-                                        {{--                                                Жою <i class="fa fa-trash"></i>--}}
-                                        {{--                                            </button>--}}
-                                        {{--                                        </form>--}}
+                                                                                <form class="d-inline" action="{{route('options.delete', ['id' => $answer->id])}}" method="post">
+                                                                                    {{csrf_field()}}
+                                                                                    <button type="submit" class="btn btn-outline-danger mb-2 "
+                                                                                            href="">
+                                                                                        Жою <i class="fa fa-trash"></i>
+                                                                                    </button>
+                                                                                </form>
                                     </td>
                                 </tr>
                             @endforeach

@@ -33,4 +33,12 @@ class OptionController extends WebBaseController
         $this->added();
         return redirect()->route('options.index', ['question_id' => $question->id]);
     }
+
+    public function delete($id) {
+        $option = Option::find($id);
+        $question_id = $option->question_id;
+        $option->delete();
+        $this->deleted();
+        return redirect()->route('options.index', ['question_id' => $question_id]);
+    }
 }

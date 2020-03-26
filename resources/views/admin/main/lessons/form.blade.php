@@ -16,7 +16,6 @@
                       required>{{$lesson->description}}</textarea>
         </div>
         <button type="submit" class="btn btn-success mr-2">Сақтау</button>
-        <button class="btn btn-light">Бас тарту</button>
     </div>
     <div class="card-footer">
         @include('admin.parts.error')
