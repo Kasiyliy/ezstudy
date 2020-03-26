@@ -70,5 +70,7 @@ Route::group(['namespace' => 'Web'], function () {
 
         Route::post('/quizzes/{course_id}/store', ['uses' => 'QuizController@store', 'as' => 'quizzes.store'])->where('course_id', '[0-9]+');
         Route::post('/quizzes/{id}/update', ['uses' => 'QuizController@update', 'as' => 'quizzes.update'])->where('id', '[0-9]+');
+
+        Route::get('/questions/{id}/list', ['uses' => 'QuestionController@index', 'as' => 'questions.index'])->where('id', '[0-9]+');
     });
 });

@@ -11,7 +11,7 @@
         </div>
         <button type="submit" class="btn btn-success mr-2">Сақтау</button>
         @if($quiz->id)
-            <button class="btn btn-primary">Cұрақтар</button>
+            <a href="{{route('questions.index', ['id' => $quiz->id])}}" class="btn btn-primary text-white">Cұрақтар</a>
         @endif
     </div>
     <div class="card-footer">
