@@ -78,7 +78,7 @@ Route::group(['namespace' => 'Web'], function () {
         });
 
         Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_USER]], function () {
-
+            
         });
     });
 });
