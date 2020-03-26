@@ -75,6 +75,13 @@ Route::group(['namespace' => 'Web'], function () {
             Route::post('/quizzes/{id}/update', ['uses' => 'QuizController@update', 'as' => 'quizzes.update'])->where('id', '[0-9]+');
 
             Route::get('/questions/{id}/list', ['uses' => 'QuestionController@index', 'as' => 'questions.index'])->where('id', '[0-9]+');
+            Route::get('/questions/{id}/create', ['uses' => 'QuestionController@create', 'as' => 'questions.create'])->where('id', '[0-9]+');
+            Route::post('/questions/{id}/store', ['uses' => 'QuestionController@store', 'as' => 'questions.store'])->where('id', '[0-9]+');
+            Route::post('/questions/{id}/delete', ['uses' => 'QuestionController@delete', 'as' => 'questions.delete'])->where('id', '[0-9]+');
+
+            Route::get('/options/{question_id}/list', ['uses' => 'OptionController@index', 'as' => 'options.index'])->where('question_id', '[0-9]+');
+            Route::get('/options/{question_id}/create', ['uses' => 'OptionController@create', 'as' => 'options.create'])->where('question_id', '[0-9]+');
+            Route::post('/options/{question_id}/store', ['uses' => 'OptionController@store', 'as' => 'options.store'])->where('question_id', '[0-9]+');
         });
 
         Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_USER]], function () {
