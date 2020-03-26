@@ -31,7 +31,7 @@
                                 <?php $i++ ?>
                                     @endforeach
                                 </div>
-                            <button type="submit" class="btn btn-primary mr-2">Тапсыру</button>
+{{--                            <button type="submit" class="btn btn-primary mr-2">Тапсыру</button>--}}
                         </form>
                     </div>
                     <div class="card-footer">
