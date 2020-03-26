@@ -52,7 +52,6 @@ class LessonController extends WebBaseController
     public function edit($id)
     {
         $lesson = Lesson::findOrFail($id);
-        $this->checkExistsOrRedirectBack($lesson);
         return view('admin.main.lessons.edit', compact('lesson'));
     }
 
