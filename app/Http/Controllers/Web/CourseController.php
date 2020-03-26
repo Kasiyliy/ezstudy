@@ -43,8 +43,7 @@ class CourseController extends WebBaseController
 
     public function edit($id)
     {
-        $course = Course::find($id);
-        $this->checkExistsOrRedirectBack($course);
+        $course = Course::findOrFail($id);
         return view('admin.main.courses.edit', compact('course'));
     }
 
