@@ -31,7 +31,7 @@ class CourseController extends WebBaseController
 
     public function index()
     {
-        $courses = Course::paginate(10);
+        $courses = Course::paginate(5);
         return view('admin.main.courses.index', compact('courses'));
     }
 
@@ -86,7 +86,7 @@ class CourseController extends WebBaseController
 
     public function myCourses()
     {
-        $courses = Course::paginate();
+        $courses = Course::paginate(5);
         return view('admin.main.courses.myCourses', compact('courses'));
     }
 }

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('admin/assets/css/demo_1/style.css')}}">
     <link rel="shortcut icon" href="{{asset('admin/assets/images/favicon.png')}}"/>
     <link rel="stylesheet" href="{{asset('css/toastr.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('ckeditor/contents.css')}}">--}}
 
     @yield('styles')
 </head>
@@ -36,6 +37,7 @@
 <script src="{{asset('admin/assets/js/shared/off-canvas.js')}}"></script>
 <script src="{{asset('admin/assets/js/demo_1/dashboard.js')}}"></script>
 <script src="{{asset('js/toastr.js')}}"></script>
+<script src="{{asset('ckeditor/ckeditor.js')}}"></script>
 
 <script>
     $.ajaxSetup({

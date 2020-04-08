@@ -30,12 +30,14 @@ class QuizController extends WebBaseController
         return redirect()->back();
     }
 
-    public function index() {
+    public function index()
+    {
         $quizzes = Quiz::with('course')->paginate(10);
         return view('admin.main.quizzes.index', compact('quizzes'));
     }
 
-    public function pass($id) {
+    public function pass($id)
+    {
         $quiz = Quiz::where('id', $id)->with('questions.options')->first();
         $i = 1;
         return view('admin.main.quizzes.pass', compact('quiz', 'i'));

@@ -45,7 +45,7 @@
                                 <h6 class="m-0">{{$lesson->name}}</h6>
                             </div>
                             <div class="card-body p-4 pb-3">
-                                <p>{{$lesson->description}}</p>
+                                <p>{!!$lesson->description !!}</p>
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-outline-primary mb-2 "
