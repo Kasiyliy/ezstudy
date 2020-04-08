@@ -18,7 +18,11 @@
                             </div>
                             <div class="col">
                                 <div class="card-block p-4">
-                                    <h4 class="card-title">{{$course->name}}</h4>
+                                    <p class="card-title">
+                                    <h3>
+                                        {{$course->name}}
+                                    </h3>
+                                    </p>
                                     <p class="card-text">{{$course->description}}</p>
                                 </div>
                             </div>
@@ -32,7 +36,8 @@
                                     Сабақ саны: {{$course->lessons->count()}}
                                 </div>
                                 <div class="col-4 text-right">
-                                    <a href="{{route('pass.lesson', ['courseId' => $course->id, 'lessonId' => null])}}" class="btn btn-lg btn-primary">Оқу</a>
+                                    <a href="{{route('pass.lesson', ['courseId' => $course->id, 'lessonId' => null])}}"
+                                       class="btn btn-lg btn-primary">Оқу</a>
                                 </div>
                             </div>
                         </div>
