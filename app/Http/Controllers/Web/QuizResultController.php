@@ -34,6 +34,7 @@ class QuizResultController extends WebBaseController
         }
         $quizResult->result = $total;
         $quizResult->save();
+        $this->makeToast('success','Сіздің көрсеткішіңіз: '. $quizResult->result .'/' .$quiz->questions->count());
         return redirect()->route('my.courses');
 
     }
