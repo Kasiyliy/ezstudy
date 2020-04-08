@@ -11,7 +11,8 @@
         </div>
         <div class="form-group">
             <label>Сипаттамасы</label>
-            <textarea name="description"
+            <textarea id="editor1"
+                      name="description"
                       class="form-control"
                       required>{{$lesson->description}}</textarea>
         </div>
@@ -21,3 +22,9 @@
         @include('admin.parts.error')
     </div>
 </div>
+
+@section('scripts')
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+@endsection

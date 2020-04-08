@@ -25,15 +25,16 @@
                         </div>
                         <div class="card-footer w-100 text-muted">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-2">
                                     {{$course->created_at}}
                                 </div>
+                                <div class="col-6">
+                                    Сабақ саны: {{$course->lessons->count()}}
+                                </div>
                                 <div class="col-4 text-right">
-                                    <a href="#" class="btn btn-lg btn-primary">Оқу</a>
+                                    <a href="{{route('pass.lesson', ['courseId' => $course->id, 'lessonId' => null])}}" class="btn btn-lg btn-primary">Оқу</a>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 @endforeach

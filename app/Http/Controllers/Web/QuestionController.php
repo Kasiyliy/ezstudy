@@ -17,13 +17,15 @@ class QuestionController extends WebBaseController
         return view('admin.main.questions.index', compact('quiz', 'course', 'questions'));
     }
 
-    public function create($quiz_id) {
+    public function create($quiz_id)
+    {
         $quiz = Quiz::with('course')->findOrFail($quiz_id);
         $question = new Question();
         return view('admin.main.questions.create', compact('quiz', 'question'));
     }
 
-    public function store($quiz_id, QuestionStoreAndUpdateRequest $request) {
+    public function store($quiz_id, QuestionStoreAndUpdateRequest $request)
+    {
         $quiz = Quiz::with('course')->findOrFail($quiz_id);
         $question = new Question();
         $question->content = $request->name;
@@ -33,7 +35,8 @@ class QuestionController extends WebBaseController
         return redirect()->route('questions.index', ['id' => $quiz->id]);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
 
     }
 }

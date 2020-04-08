@@ -16,7 +16,7 @@ class CreateLessonsTable extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->text('description');
+            $table->longText('description');
 
             $table->unsignedBigInteger('course_id')->nullable(false);
             $table->foreign('course_id', 'fk_lessons_courses')

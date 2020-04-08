@@ -81,4 +81,21 @@ class LessonController extends WebBaseController
         $lesson->delete();
         return redirect()->back();
     }
+
+    public function pass($courseId, $lessonId = null)
+    {
+        $lessons = Lesson::where('course_id', $courseId)->with('course')->orderBy('id', 'ASC')->get();
+        $currentLesson = null;
+        if ($lessonId) {
+            $currentLesson = Lesson::with('course')->where('course_id', $courseId)->where('id', $lessonId)->first();
+        } else if ($lessons->first()) {
+            $currentLesson = $lessons->first();
+        }
+
+        if (!$currentLesson) {
+            $this->notFound();
+            return redirect()->back();
+        }
+        return view('admin.main.lessons.pass', compact('lessons', 'currentLesson'));
+    }
 }
