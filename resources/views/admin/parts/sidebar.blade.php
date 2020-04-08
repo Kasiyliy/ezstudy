@@ -30,6 +30,11 @@
                     <span>Курстар</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('quizzes.index')}}">
+                    <span>Тесттер</span>
+                </a>
+            </li>
         @elseif(Auth::user()->isUser())
             <li class="nav-item">
                 <a class="nav-link" href="{{route('my.courses')}}">
