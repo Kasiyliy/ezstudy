@@ -44,7 +44,8 @@
                         </li>
                     @endforeach
                     <li class="list-group-item bg-success">
-                        <a class="btn text-white">Тест тапсыру</a>
+                        <a href="{{route('quiz.course.pass', ['course_id'=> $currentLesson->course_id])}}"
+                           class="btn text-white">Тест тапсыру</a>
                     </li>
                 </ul>
             </div>
