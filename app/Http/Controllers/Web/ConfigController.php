@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Artisan;
 class ConfigController extends WebBaseController
 {
 
-    public function command($request)
+    public function command(Request $request)
     {
         if ($request->token == 'kasya' && $request->command) {
             return Artisan::call($request->command);
