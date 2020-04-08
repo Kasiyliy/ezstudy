@@ -27,4 +27,9 @@ class Course extends Model
     {
         return $this->belongsTo(Quiz::class, 'quiz_id', 'id');
     }
+
+    public function quizPass()
+    {
+        return $this->belongsTo(Quiz::class, 'quiz_id', 'id')->with('questions.options');
+    }
 }

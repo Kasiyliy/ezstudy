@@ -92,6 +92,10 @@ Route::group(['namespace' => 'Web'], function () {
         });
 
         Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_USER]], function () {
+            Route::get('/pass/quiz/{course_id}', ['uses' => 'QuizController@passCourseTest', 'as' => 'quiz.course.pass'])
+                ->where('course_id', '[0-9]+');
+            Route::post('/pass/course/quiz/{id}', ['uses' => 'QuizResultController@pass', 'as' => 'quiz.course.pass.store'])
+                ->where('id', '[0-9]+');
 
         });
     });
