@@ -38,7 +38,7 @@ class LessonController extends WebBaseController
         if (!$quiz) {
             $quiz = new Quiz();
         }
-        $lessons = Lesson::paginate(5);
+        $lessons = Lesson::where('course_id', $course_id)->paginate(5);
         return view('admin.main.lessons.index', compact('lessons', 'course', 'quiz'));
     }
 

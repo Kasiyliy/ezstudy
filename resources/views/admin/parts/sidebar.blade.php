@@ -30,6 +30,12 @@
                     <span>Курстар</span>
                 </a>
             </li>
+        @elseif(Auth::user()->isUser())
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('my.courses')}}">
+                    <span>Менің курстарым</span>
+                </a>
+            </li>
         @endif
     </ul>
 </nav>

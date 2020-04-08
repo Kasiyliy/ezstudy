@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Web'], function () {
 
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/home', ['uses' => 'HomeController@index', 'as' => 'home']);
+        Route::get('/my-courses', ['uses' => 'CourseController@myCourses', 'as' => 'my.courses']);
 
 
         Route::group(['middleware' => ['ROLE_OR:' . \App\Models\System\Role::ROLE_ADMIN]], function () {

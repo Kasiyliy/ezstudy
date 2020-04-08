@@ -83,4 +83,10 @@ class CourseController extends WebBaseController
         $lesson->delete();
         return redirect()->back();
     }
+
+    public function myCourses()
+    {
+        $courses = Course::paginate();
+        return view('admin.main.courses.myCourses', compact('courses'));
+    }
 }
