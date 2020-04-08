@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Exceptions\WebServiceErroredException;
 use App\Http\Controllers\WebBaseController;
 use App\Http\Requests\QuestionRequests\OptionStoreAndUpdateRequest;
 use App\Models\Education\Option;
@@ -26,6 +27,11 @@ class OptionController extends WebBaseController
     public function store($question_id, OptionStoreAndUpdateRequest $request) {
         $option = new Option();
         $question = Question::find($question_id);
+        foreach ($question->options as $option) {
+            if($request->is_right && $option->is_right) {
+                throw new WebServiceErroredException('2 жауап бірдей болуы мүмкін емес!');
+            }
+        }
         $option->content = $request->name;
         $option->question_id = $question_id;
         $option->is_right = $request->is_right ? true : false;
