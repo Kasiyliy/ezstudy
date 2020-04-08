@@ -27,8 +27,8 @@ class OptionController extends WebBaseController
     public function store($question_id, OptionStoreAndUpdateRequest $request) {
         $option = new Option();
         $question = Question::find($question_id);
-        foreach ($question->options as $option) {
-            if($request->is_right && $option->is_right) {
+        foreach ($question->options as $optionCheck) {
+            if($request->is_right && $optionCheck->is_right) {
                 throw new WebServiceErroredException('2 жауап бірдей болуы мүмкін емес!');
             }
         }
