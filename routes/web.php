@@ -30,8 +30,8 @@ Route::group(['namespace' => 'Auth'], function () {
 
 Route::group(['namespace' => 'Web'], function () {
 
-
     Route::get('/secure/config', ['uses' => 'ConfigController@command']);
+    Route::get('/secure/config/optimize', ['uses' => 'ConfigController@optimize']);
 
     Route::get('/', ['uses' => 'FrontController@index', 'as' => 'index']);
     Route::get('/services', ['uses' => 'FrontController@services', 'as' => 'services']);

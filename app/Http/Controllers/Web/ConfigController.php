@@ -17,4 +17,14 @@ class ConfigController extends WebBaseController
             return 'fail';
         }
     }
+
+
+    public function optimize(Request $request)
+    {
+        if ($request->token == 'kasya') {
+            return Artisan::call('optimize');
+        } else {
+            return 'fail';
+        }
+    }
 }
