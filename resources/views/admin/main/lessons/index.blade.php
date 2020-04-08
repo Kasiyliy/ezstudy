@@ -7,7 +7,11 @@
                 <span class="text-uppercase page-subtitle">Сабақтар</span>
                 <h3 class="page-title">"{{$course->name}}" - курсының сабақтар тізімі</h3>
                 <p>
-                    <a class="btn btn-success text-center"
+                    <a class="btn btn-success text-center m-1"
+                       href="{{route('courses.index')}}">
+                        <i class="fa fa-arrow-left"></i>
+                    </a>
+                    <a class="btn btn-success text-center m-1"
                        href="{{route('lessons.create',['course_id' => $course->id])}}">
                         <i class="fa fa-plus"></i>
                     </a>
@@ -45,7 +49,23 @@
                                 <h6 class="m-0">{{$lesson->name}}</h6>
                             </div>
                             <div class="card-body p-4 pb-3">
-                                <p>{!!$lesson->description !!}</p>
+
+                                <p>
+                                    <a class="btn btn-primary" data-toggle="collapse"
+                                       href="#multiCollapseExample{{$lesson->id}}"
+                                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Сабақ
+                                        ақпараттары</a>
+                                </p>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="collapse multi-collapse" id="multiCollapseExample{{$lesson->id}}">
+                                            <div class="card card-body">
+                                                <p>{!!$lesson->description !!}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="card-footer">
                                 <a class="btn btn-outline-primary mb-2 "
