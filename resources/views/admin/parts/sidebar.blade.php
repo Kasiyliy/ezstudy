@@ -41,6 +41,11 @@
                     <span>Менің курстарым</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('my.certificates')}}">
+                    <span>Менің сертификаттарым</span>
+                </a>
+            </li>
         @endif
     </ul>
 </nav>

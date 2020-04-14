@@ -88,6 +88,9 @@ Route::group(['namespace' => 'Web'], function () {
                 ->where('id', '[0-9]+');
 
 
+            Route::get('/my-certificates', ['uses' => 'CertificateController@myCertificates', 'as' => 'my.certificates']);
+            Route::get('/get-certificates/{id}', ['uses' => 'CertificateController@certificate', 'as' => 'get.certificate'])->where('id', '[0-9]+');
+
             Route::get('/my-courses', ['uses' => 'CourseController@myCourses', 'as' => 'my.courses']);
             Route::get('/pass-lesson/{courseId}/{lessonId?}', ['uses' => 'LessonController@pass', 'as' => 'pass.lesson'])
                 ->where('courseId', '[0-9]+')
