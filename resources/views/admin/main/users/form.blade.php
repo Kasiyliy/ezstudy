@@ -25,16 +25,6 @@
                    class="form-control"
                    placeholder="Email" required>
         </div>
-        @if(!$user->id)
-            <div class="form-group">
-                <label>Құпия сөз</label>
-                <input type="password"
-                       name="password"
-                       class="form-control"
-                       placeholder="Құпия сөз"
-                       required>
-            </div>
-        @endif
         <div class="form-group">
             <label for="exampleInputCity1">Рөль</label>
             <select class="form-control" name="role_id" id="role_id" required>
@@ -46,6 +36,43 @@
                 @endforeach
             </select>
         </div>
+
+        @if(!$user->id)
+            <div class="form-group">
+                <label>Құпия сөз</label>
+                <input type="password"
+                       name="password"
+                       id="password"
+                       class="form-control"
+                       placeholder="Құпия сөз"
+                       required>
+            </div>
+        @else
+            <div class="row">
+                <div class="col-10">
+                    <div class="form-group">
+                        <label>Құпия сөз</label>
+                        <input type="password"
+                               name="password"
+                               id="password"
+                               class="form-control"
+                               placeholder="Құпия сөз"
+                               required>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="form-group">
+                        <label>Құпия сөз өзгерту</label>
+                        <div class="custom-control custom-switch">
+                            <input checked type="checkbox" class="custom-control-input form-control-lg"
+                                   onchange="toggleSwitch(this)"
+                                   id="passwordSwitch">
+                            <label class="custom-control-label" for="passwordSwitch">өзгеріс кажет пе?</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
         <button type="submit" class="btn btn-success mr-2">Сақтау</button>
         <button class="btn btn-light">Бас тарту</button>
     </div>
@@ -53,3 +80,11 @@
         @include('admin.parts.error')
     </div>
 </div>
+
+@section('scripts')
+    <script>
+        function toggleSwitch(el) {
+            document.getElementById('password').disabled = !document.getElementById('password').disabled;
+        }
+    </script>
+@endsection

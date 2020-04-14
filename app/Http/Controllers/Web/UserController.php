@@ -50,7 +50,10 @@ class UserController extends WebBaseController
     public function update($id, StoreOrUpdateUserRequest $request)
     {
         $user = User::findOrFail($id);
-        $user->fill($request->all());
+        $user->fill($request->except('password'));
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        }
         $user->save();
         $this->edited();
         return redirect()->back();

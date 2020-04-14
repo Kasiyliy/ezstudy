@@ -20,13 +20,14 @@ class StoreOrUpdateUserRequest extends WebBaseRequest
             return [
                 'first_name' => ['required', 'string'],
                 'last_name' => ['required', 'string'],
-                'password' => ['required', 'string'],
+                'password' => ['nullable', 'string'],
                 'email' => ['email', 'required', "unique:users,email,$id"],
             ];
         } else {
             return [
                 'first_name' => ['required', 'string'],
                 'last_name' => ['required', 'string'],
+                'password' => ['required', 'string'],
                 'email' => ['email', 'required', 'unique:users,email'],
             ];
         }
