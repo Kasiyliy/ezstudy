@@ -54,9 +54,7 @@
                 <li><a href="{{route('index')}}">Басты</a></li>
                 <li><a href="{{route('about')}}">Біз жайлы</a></li>
                 <li><a href="{{route('services')}}">Қызметтер</a></li>
-                {{--<li><a href="portfolio.html">Portfolio</a></li>--}}
                 <li><a href="{{route('team')}}">Команда</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="{{route('contact')}}">Бізбен хабарласу</a></li>
                 @guest
                     <li>
