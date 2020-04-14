@@ -42,6 +42,7 @@
                                     </td>
                                     <td>
                                         <a class="btn btn-primary"
+                                           target="_blank"
                                            href="{{route('get.certificate', ['id' => $certificate->id])}}">
                                             басып шығару
                                             <span class="fa fa-print"></span>
