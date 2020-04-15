@@ -28,7 +28,7 @@ class QuizController extends WebBaseController
 
     public function update($id, StoreOrUpdateQuizRequest $request)
     {
-        $quiz = Quiz::findOrFail($id);
+        $quiz = Quiz::with('course')->findOrFail($id);
         $quiz->update($request->all());
         $this->edited();
         return redirect()->back();
@@ -47,9 +47,10 @@ class QuizController extends WebBaseController
         return view('admin.main.quizzes.pass', compact('quiz', 'i'));
     }
 
-    public function passCourseTest($course_id) {
+    public function passCourseTest($course_id)
+    {
         $course = Course::where('id', $course_id)->with('quiz')->first();
-        if(!$course) {
+        if (!$course) {
             throw new WebServiceErroredException('Не найден курс');
         }
         $quiz = $course->quizPass;
