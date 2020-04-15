@@ -11,36 +11,32 @@
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
                         <div class="icon-box icon-box-pink">
                             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate non provident</p>
+                            <h4 class="title"><a href="">Жаттығуды өз қарқыңмен жүргіз</a></h4>
+                            <p class="description">Білім негізінен ұмытып кеткен нәрселерден тұрады, оңай және қарапайым есте сақтауға көмектесеміз</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-box icon-box-cyan">
                             <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur</p>
+                            <h4 class="title"><a href="">Жетекші мамандардан үйреніңіз</a></h4>
+                            <p class="description">Бүкіл Қазақстан бойынша ең жақсы мұғалімдерді таңдаңыз</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box icon-box-green">
                             <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum</p>
+                            <h4 class="title"><a href="">Жаттығуды тәжірибеге енгізіңіз</a></h4>
+                            <p class="description">Нақты жобалардағы жаттығуларыңызды қолданыңыз және жеке тесттермен біліміңізді тексеріңіз.</p>
                         </div>
                     </div>
 
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon-box icon-box-blue">
                             <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque</p>
+                            <h4 class="title"><a href="">Армандағы жұмысыңызды табыңыз</a></h4>
+                            <p class="description">Кодтау дағдылары ешқашан сұранысқа ие болған емес. Мансапты келесі деңгейге көтеру үшін не қажет екенін біліп алыңыз.</p>
                         </div>
                     </div>
 
@@ -64,9 +60,8 @@
 
                         <div class="icon-box">
                             <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate non provident</p>
+                            <h4 class="title"><a href="">ЖЕҢІЛ ҮЙРЕН </a></h4>
+                            <p class="description">БҰЛ IT-МАМАНДАРЫНАН ӘРТҮРЛІ МӘЛІМЕТТЕРДІ ТАБА АЛАТЫН ЕҢ ДАМЫҒАН БАҒДАРЛАМАЛАУ МЕКТЕПТЕРІНІҢ БІРІ. НЕГІЗДЕРДІ ИГЕРІП, ЖАҢА ДЕҢГЕЙГЕ КӨТЕРІЛГІСІ КЕЛЕТІНДЕРДІҢ БАРЛЫҒЫНА ЖАҚСЫ ҰСЫНЫС.</p>
                         </div>
 
                         <div class="icon-box">
